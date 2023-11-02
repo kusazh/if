@@ -7,8 +7,7 @@
     <script>
       window.onload = function () {
         const place =
-          window.location.search.toLowerCase().replace("=", "").slice(1) ||
-          "纽约";
+          window.location.search.match(/[^&?]+/) || "纽约";
         document.querySelectorAll(".place").forEach((span) => {
           span.textContent = decodeURIComponent(place);
         });
